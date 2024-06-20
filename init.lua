@@ -282,6 +282,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+
+-- Pytest shortcut
+vim.keymap.set('n', '<leader>p', ':!pytest %<CR>', {desc = 'pytest current file' })
+
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
