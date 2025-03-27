@@ -13,6 +13,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.g.dbs = {
+  dev = 'postgres://postgres:root@localhost:5432'
+}
+
 -- [[ Configure plugins ]]
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
@@ -312,6 +316,7 @@ vim.keymap.set('n', '<leader>p', ':!pytest %<CR>', {desc = 'pytest current file'
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
+    path_display = { "truncate" },
     mappings = {
       i = {
         ['<C-u>'] = false,
